@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumen Studio — Creative Agency Website Concept | Neo Zyphorixweb</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-main:#020617;
+      --accent:#6366f1;
+      --accent-2:#22d3ee;
+      --text-main:#e5e7eb;
+      --text-muted:#9ca3af;
+      --radius-lg:18px;
+      --radius-full:999px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:"Poppins",system-ui,sans-serif;
+      background:radial-gradient(circle at top,#111827,#020617 55%,#000);
+      color:var(--text-main);
+      min-height:100vh;
+    }
+    .page{
+      max-width:1100px;
+      margin:0 auto;
+      padding:18px 16px 40px;
+    }
+    .top-bar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      margin-bottom:20px;
+    }
+    .crumbs{
+      font-size:0.8rem;
+      color:var(--text-muted);
+    }
+    .crumbs a{color:var(--accent-2);text-decoration:none;}
+    .crumbs a:hover{text-decoration:underline;}
+    .badge{
+      font-size:0.75rem;
+      padding:4px 10px;
+      border-radius:var(--radius-full);
+      border:1px solid rgba(148,163,184,0.7);
+      background:rgba(15,23,42,0.95);
+      color:var(--text-muted);
+    }
+
+    .hero{
+      text-align:left;
+      margin-bottom:24px;
+    }
+    .title{
+      font-size:clamp(1.7rem,3vw,2.3rem);
+      line-height:1.1;
+    }
+    .title span{
+      background:linear-gradient(120deg,#6366f1,#a855f7);
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+    .subtitle{
+      font-size:0.9rem;
+      color:var(--text-muted);
+      max-width:620px;
+      margin-top:8px;
+    }
+    .hero-strip{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:12px;
+      font-size:0.78rem;
+    }
+    .pill{
+      padding:4px 10px;
+      border-radius:var(--radius-full);
+      border:1px solid rgba(148,163,184,0.6);
+      background:rgba(15,23,42,0.96);
+    }
+
+    .screen-mock{
+      margin-top:16px;
+      border-radius:22px;
+      border:1px solid rgba(55,65,81,0.9);
+      background:radial-gradient(circle at top,#1e293b,#020617);
+      padding:10px 10px 14px;
+    }
+    .screen-bar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      font-size:0.75rem;
+      color:var(--text-muted);
+      margin-bottom:8px;
+    }
+    .dots{
+      display:flex;
+      gap:4px;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:999px;
+      background:rgba(148,163,184,0.6);
+    }
+    .screen-area{
+      border-radius:16px;
+      border:1px solid rgba(75,85,99,0.9);
+      height:200px;
+      background:linear-gradient(135deg,rgba(15,23,42,0.98),rgba(15,23,42,0.7));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:0.9rem;
+      color:var(--text-muted);
+      text-align:center;
+      padding:0 18px;
+    }
+
+    .section{
+      margin-top:22px;
+      padding:18px 14px;
+      border-radius:20px;
+      border:1px solid rgba(55,65,81,0.9);
+      background:rgba(15,23,42,0.98);
+    }
+    .section h2{
+      font-size:1rem;
+      margin-bottom:6px;
+    }
+    .section p{
+      font-size:0.82rem;
+      color:var(--text-muted);
+    }
+
+    .columns{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:12px;
+      margin-top:10px;
+      font-size:0.8rem;
+    }
+    .col{
+      border-radius:16px;
+      border:1px dashed rgba(75,85,99,0.9);
+      padding:10px;
+      background:rgba(15,23,42,0.96);
+    }
+    .col h3{
+      font-size:0.9rem;
+      margin-bottom:4px;
+    }
+    .list{
+      margin-top:6px;
+      padding-left:16px;
+      font-size:0.8rem;
+      color:var(--text-muted);
+    }
+    .list li{margin-bottom:3px;}
+
+    .back-link{
+      margin-top:18px;
+      font-size:0.8rem;
+    }
+    .back-link a{
+      color:var(--accent-2);
+      text-decoration:none;
+    }
+    .back-link a:hover{text-decoration:underline;}
+
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="top-bar">
+      <div class="crumbs">
+        <a href="index.html">← Back to Neo Zyphorixweb</a> · Project example
+      </div>
+      <div class="badge">Sample concept — Creative agency site</div>
+    </div>
+
+    <section class="hero">
+      <h1 class="title">
+        Lumen Studio — <span>clean, editorial-style</span> creative agency website.
+      </h1>
+      <p class="subtitle">
+        This concept explores a calm, editorial feel for a design studio that wants
+        to look premium without feeling loud. Focus on typography, spacing and a
+        balanced grid that lets visuals breathe.
+      </p>
+      <div class="hero-strip">
+        <span class="pill">Multi-page structure</span>
+        <span class="pill">Portfolio-first layout</span>
+        <span class="pill">Strong use of white space</span>
+      </div>
+
+      <div class="screen-mock">
+        <div class="screen-bar">
+          <div class="dots">
+            <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+          </div>
+          <span>lumenstudio.design — Home</span>
+          <span>Preview mode</span>
+        </div>
+        <div class="screen-area">
+          Clean hero with short headline, subtle subcopy and an understated call-to-action,
+          followed by a simple but strong portfolio grid.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Information architecture</h2>
+      <p>
+        The site is structured to feel effortless to navigate. Each page has a clear role,
+        and together they build trust, show expertise and make it easy for leads to reach out.
+      </p>
+
+      <div class="columns">
+        <div class="col">
+          <h3>Home</h3>
+          <p>Snapshot of the studio: what they do, who they help and a direct link to featured work.</p>
+          <ul class="list">
+            <li>Short, bold hero statement</li>
+            <li>Selected projects with short captions</li>
+            <li>Subtle call-to-action to view full portfolio</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Portfolio</h3>
+          <p>A focused place for case studies and visuals. Less text, more clarity and context.</p>
+          <ul class="list">
+            <li>Thumbnail grid with hover states</li>
+            <li>Optional case study pages</li>
+            <li>Filtering by project type (brand, web, etc.)</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>About & Contact</h3>
+          <p>Human side of the studio + a simple way to start a conversation.</p>
+          <ul class="list">
+            <li>Story, principles and team highlights</li>
+            <li>Social links and email</li>
+            <li>Short contact form for new projects</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="back-link">
+      <a href="index.html#portfolio">← Back to all sample projects</a>
+    </div>
+  </div>
+</body>
+</html>
