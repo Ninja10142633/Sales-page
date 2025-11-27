@@ -3,1170 +3,710 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Neo Zyphorixweb — High-End Landing Pages & Websites</title>
-  <meta name="description" content="Neo Zyphorixweb designs high-end landing pages and full websites for brands that want authority, speed and conversion-focused experiences.">
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  <title>ZyphX — Neo Zyphorixweb | Futuristic Web Design Studio</title>
+  <meta name="description" content="Neo Zyphorixweb (ZyphX) crafts ultra-premium, conversion-led websites with neon precision and cyber-grade polish." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-main: #040712;
-      --bg-alt: #070c1b;
-      --accent: #4f46e5;
-      --accent-soft: rgba(79, 70, 229, 0.15);
-      --accent-2: #22d3ee;
-      --text-main: #e5e7eb;
-      --text-muted: #9ca3af;
-      --border-subtle: rgba(156, 163, 175, 0.25);
-      --radius-lg: 18px;
-      --radius-full: 999px;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.85);
-      --shadow-glow: 0 0 40px rgba(56, 189, 248, 0.35);
-      --transition-fast: 0.2s ease;
+      --black: #020202;
+      --panel: rgba(10, 14, 26, 0.75);
+      --glass: rgba(255, 255, 255, 0.03);
+      --aqua: #00f5ff;
+      --blue: #0b6cff;
+      --text: #e9f1ff;
+      --muted: #9fb0c7;
+      --border: rgba(255, 255, 255, 0.08);
+      --glow: 0 0 32px rgba(0, 245, 255, 0.25);
+      --radius-lg: 20px;
+      --radius-xl: 30px;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
+    *, *::before, *::after {
       box-sizing: border-box;
     }
 
     body {
-      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at top left, #0b1220 0, #020617 45%, #000 100%);
-      color: var(--text-main);
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at 15% 20%, rgba(0, 245, 255, 0.08), transparent 32%),
+                  radial-gradient(circle at 85% 10%, rgba(11, 108, 255, 0.12), transparent 36%),
+                  radial-gradient(circle at 60% 80%, rgba(0, 245, 255, 0.08), transparent 30%),
+                  #020202;
+      color: var(--text);
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
       scroll-behavior: smooth;
     }
 
     .page {
-      max-width: 1180px;
+      max-width: 1220px;
       margin: 0 auto;
-      padding: 20px 18px 40px;
+      padding: 28px 18px 80px;
+      position: relative;
     }
 
-    /* NAVBAR */
-    .nav {
+    .blur-orb {
+      position: fixed;
+      width: 380px;
+      height: 380px;
+      filter: blur(140px);
+      opacity: 0.4;
+      z-index: 0;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+    .orb-aqua { background: #00f5ff; top: 8%; left: 8%; }
+    .orb-blue { background: #0b6cff; bottom: 10%; right: 8%; }
+
+    header.nav {
+      position: sticky;
+      top: 18px;
+      z-index: 20;
+      margin-bottom: 32px;
+    }
+
+    .nav-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
-      padding: 10px 16px;
-      margin-bottom: 24px;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(75, 85, 99, 0.5);
-      background: linear-gradient(120deg, rgba(15,23,42,0.98), rgba(15,23,42,0.8), rgba(15,23,42,0.98));
-      backdrop-filter: blur(20px);
-      position: sticky;
-      top: 10px;
-      z-index: 20;
-      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.8);
+      gap: 20px;
+      padding: 14px 16px;
+      border-radius: 999px;
+      background: linear-gradient(120deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      border: 1px solid var(--border);
+      backdrop-filter: blur(18px) saturate(140%);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.35), var(--glow);
     }
 
-    .nav-left {
+    .logo-wrap {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
-    .logo-pill {
-      width: 40px;
-      height: 40px;
-      border-radius: var(--radius-full);
-      background: conic-gradient(from 180deg, #4f46e5, #22d3ee, #a855f7, #4f46e5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--shadow-glow);
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(140deg, rgba(0,245,255,0.2), rgba(11,108,255,0.4));
+      border: 1px solid rgba(255,255,255,0.1);
+      display: grid;
+      place-items: center;
       position: relative;
+      box-shadow: var(--glow);
       overflow: hidden;
     }
 
-    .logo-pill::after {
+    .logo::after {
       content: "";
       position: absolute;
-      inset: 3px;
-      border-radius: inherit;
-      background: radial-gradient(circle at top, #020617 0, #020617 60%, #020617 100%);
+      inset: 6px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
-    .logo-pill span {
+    .logo span {
       position: relative;
+      font-family: "Space Grotesk", sans-serif;
       font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.06em;
+      font-size: 1rem;
+      color: var(--aqua);
     }
 
-    .brand-text {
+    .brand {
       display: flex;
       flex-direction: column;
       gap: 2px;
-    }
-
-    .brand-name {
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
-    .brand-tagline {
-      font-size: 0.72rem;
-      color: var(--text-muted);
+    .brand strong { letter-spacing: 0.14em; font-size: 0.95rem; }
+    .brand small { letter-spacing: 0.2em; color: var(--muted); font-size: 0.64rem; }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      font-size: 0.92rem;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 12px;
+      transition: 0.25s ease;
+    }
+
+    nav a:hover { color: var(--aqua); background: rgba(255,255,255,0.03); }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: linear-gradient(120deg, rgba(0,245,255,0.18), rgba(11,108,255,0.15));
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: var(--glow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .pill.secondary {
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      box-shadow: none;
+    }
+
+    .pill:hover { transform: translateY(-2px); box-shadow: 0 18px 48px rgba(0,0,0,0.45), var(--glow); }
+
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 60px;
+      z-index: 1;
+    }
+
+    .hero-copy { display: flex; flex-direction: column; gap: 18px; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      width: fit-content;
       text-transform: uppercase;
       letter-spacing: 0.16em;
+      font-size: 0.72rem;
     }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-size: 0.85rem;
-    }
-
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color var(--transition-fast), opacity var(--transition-fast);
-      opacity: 0.85;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent-2);
-      opacity: 1;
-    }
-
-    .nav-cta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .btn {
-      border: none;
-      border-radius: var(--radius-full);
-      padding: 9px 16px;
-      font-size: 0.8rem;
-      cursor: pointer;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), opacity var(--transition-fast);
-      white-space: nowrap;
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text-muted);
-      border: 1px solid rgba(148, 163, 184, 0.7);
-    }
-
-    .btn-outline:hover {
-      color: var(--accent-2);
-      border-color: var(--accent-2);
-      transform: translateY(-1px);
-    }
-
-    .btn-primary {
-      background: linear-gradient(130deg, #4f46e5, #22d3ee);
-      color: white;
-      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.6);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px) translateX(0);
-      box-shadow: 0 15px 45px rgba(59, 130, 246, 0.75);
-      opacity: 0.98;
-    }
-
-    .btn span.icon {
-      font-size: 1rem;
-    }
-
-    /* HERO */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 26px;
-      margin-top: 26px;
-      margin-bottom: 28px;
-      align-items: center;
-    }
-
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 5px 10px;
-      border-radius: var(--radius-full);
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid var(--border-subtle);
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    .hero-badge-dot {
+    .eyebrow span {
       width: 8px;
       height: 8px;
-      border-radius: 999px;
-      background: radial-gradient(circle at center, #22c55e, #16a34a);
-      box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
+      border-radius: 50%;
+      background: linear-gradient(120deg, #00f5ff, #0b6cff);
+      box-shadow: 0 0 14px rgba(0,245,255,0.8);
     }
 
-    .hero-title {
-      font-size: clamp(1.9rem, 3.3vw, 2.6rem);
-      line-height: 1.12;
-      letter-spacing: 0.03em;
+    h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      line-height: 1.05;
+      margin: 0;
+      letter-spacing: -0.01em;
+      text-shadow: 0 10px 48px rgba(0,0,0,0.8);
     }
 
-    .hero-title span.highlight {
-      background: linear-gradient(120deg, #22d3ee, #4f46e5, #a855f7);
-      -webkit-background-clip: text;
-      color: transparent;
+    h1 .gradient { background: linear-gradient(120deg, var(--aqua), var(--blue)); -webkit-background-clip: text; color: transparent; }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 620px;
+      line-height: 1.6;
     }
 
-    .hero-subtitle {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      max-width: 520px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 4px;
-    }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 
     .hero-metrics {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-top: 14px;
-      font-size: 0.8rem;
-      color: var(--text-muted);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
     }
 
     .metric {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-
-    .metric strong {
-      font-size: 1.05rem;
-      color: #e5e7eb;
-    }
-
-    /* HERO RIGHT / CARD */
-    .hero-right {
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-    }
-
-    .hero-card {
-      border-radius: 24px;
-      background: radial-gradient(circle at top left, #111827, var(--bg-main));
-      padding: 16px 14px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      box-shadow: var(--shadow-soft);
-      width: 100%;
-      max-width: 360px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      width: 160%;
-      height: 160%;
-      background: radial-gradient(circle at top, rgba(56,189,248,0.18), transparent 60%);
-      top: -40%;
-      left: -40%;
-      opacity: 0.8;
-      pointer-events: none;
-    }
-
-    .hero-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-card-title {
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .hero-card-badge {
-      font-size: 0.68rem;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.8);
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      color: var(--accent-2);
-    }
-
-    .hero-card-list {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      font-size: 0.8rem;
-    }
-
-    .hero-row {
-      border-radius: 12px;
-      padding: 8px 9px;
-      border: 1px solid rgba(51, 65, 85, 0.7);
-      background: radial-gradient(circle at top left, rgba(15,23,42,0.9), rgba(15,23,42,0.9));
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .hero-row-label {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .hero-row-value {
-      font-size: 0.8rem;
-      font-weight: 500;
-    }
-
-    .hero-progress {
-      display: flex;
-      flex-direction: column;
+      padding: 14px;
+      border-radius: 16px;
+      background: var(--glass);
+      border: 1px solid var(--border);
+      display: grid;
       gap: 4px;
-      margin-top: 4px;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.35);
     }
 
-    .progress-track {
-      height: 6px;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.95);
-      overflow: hidden;
-      border: 1px solid rgba(51, 65, 85, 0.8);
-    }
+    .metric strong { font-size: 1.3rem; letter-spacing: -0.01em; }
+    .metric span { color: var(--muted); font-size: 0.9rem; }
 
-    .progress-fill {
-      width: 78%;
-      height: 100%;
-      border-radius: inherit;
-      background: linear-gradient(90deg, #22d3ee, #4f46e5);
-      box-shadow: 0 0 14px rgba(56,189,248,0.6);
-    }
-
-    .hero-card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      margin-top: 4px;
-    }
-
-    .hero-card-tag {
-      font-size: 0.7rem;
-      color: var(--text-muted);
-    }
-
-    .hero-card-cta {
-      font-size: 0.78rem;
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.6);
-      background: rgba(15,23,42,0.9);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-      transition: var(--transition-fast);
-    }
-
-    .hero-card-cta:hover {
-      border-color: var(--accent-2);
-      color: var(--accent-2);
-    }
-
-    /* SECTION WRAPPER */
-    .section {
-      margin-top: 32px;
-      padding: 22px 18px;
-      background: radial-gradient(circle at top left, #020617, #020617);
-      border-radius: 22px;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 12px;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
-    }
-
-    .section-title {
-      font-size: 1.05rem;
-      font-weight: 600;
-    }
-
-    .section-subtitle {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      max-width: 420px;
-    }
-
-    /* SERVICES */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 14px;
-      margin-top: 10px;
-    }
-
-    .service-card {
-      border-radius: 18px;
-      border: 1px solid rgba(75, 85, 99, 0.9);
-      background: radial-gradient(circle at top left, #020617, #020617);
-      padding: 14px 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+    .hero-visual {
       position: relative;
+      background: linear-gradient(160deg, rgba(0,245,255,0.08), rgba(11,108,255,0.14));
+      border-radius: var(--radius-xl);
+      padding: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.5), var(--glow);
       overflow: hidden;
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
     }
 
-    .service-card::before {
+    .floating-card {
+      background: rgba(255,255,255,0.04);
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    }
+
+    .floating-card h3 { margin: 0; font-size: 1rem; letter-spacing: 0.02em; }
+    .floating-card p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+
+    .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      padding: 8px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,245,255,0.3);
+      background: rgba(0,245,255,0.06);
+      color: var(--aqua);
+      font-size: 0.8rem;
+    }
+
+    .glow-lines::before, .glow-lines::after {
       content: "";
       position: absolute;
-      inset: -40%;
-      background: radial-gradient(circle at top, rgba(79, 70, 229, 0.18), transparent 60%);
-      opacity: 0;
-      transition: opacity var(--transition-fast);
+      inset: -40% -20% auto -20%;
+      height: 65%;
+      background: radial-gradient(circle at 20% 20%, rgba(0,245,255,0.25), transparent 45%);
+      opacity: 0.7;
+      transform: rotate(-8deg);
       pointer-events: none;
     }
-
-    .service-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
-      border-color: rgba(129, 140, 248, 0.9);
+    .glow-lines::after {
+      inset: auto -10% -50% -10%;
+      height: 80%;
+      background: radial-gradient(circle at 80% 60%, rgba(11,108,255,0.25), transparent 50%);
+      transform: rotate(6deg);
     }
 
-    .service-card:hover::before {
-      opacity: 1;
-    }
-
-    .service-tag {
-      font-size: 0.7rem;
-      padding: 3px 8px;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      color: var(--text-muted);
-      align-self: flex-start;
-    }
-
-    .service-title {
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-
-    .service-text {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .service-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 6px;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .service-price {
-      color: var(--accent-2);
-      font-weight: 500;
-    }
-
-    /* PORTFOLIO */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-      margin-top: 10px;
-    }
-
-    .project-card {
-      border-radius: 18px;
-      border: 1px solid rgba(75, 85, 99, 0.9);
-      background: radial-gradient(circle at top left, #020617, #020617);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
-    }
-
-    .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.95);
-      border-color: rgba(56, 189, 248, 0.9);
-    }
-
-    .project-thumb {
+    .section {
+      margin-bottom: 48px;
       position: relative;
-      height: 170px;
-      background: radial-gradient(circle at top left, #22d3ee, #4f46e5, #020617);
+      z-index: 1;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 24px 22px 26px;
+      box-shadow: 0 20px 55px rgba(0,0,0,0.5);
       overflow: hidden;
     }
 
-    .project-thumb::after {
+    .section h2 { margin: 0 0 6px; font-size: 1.4rem; letter-spacing: -0.01em; }
+    .section p.sub { margin: 0; color: var(--muted); max-width: 640px; }
+
+    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 18px; }
+
+    .service {
+      padding: 16px;
+      border-radius: 18px;
+      background: linear-gradient(140deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      display: grid;
+      gap: 10px;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .service:hover { transform: translateY(-4px); border-color: rgba(0,245,255,0.5); box-shadow: var(--glow); }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle, rgba(0,245,255,0.18), rgba(0,245,255,0.05));
+      border: 1px solid rgba(0,245,255,0.25);
+      box-shadow: 0 10px 32px rgba(0,245,255,0.18);
+      color: var(--aqua);
+      font-weight: 700;
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .service h3 { margin: 0; font-size: 1.05rem; letter-spacing: 0.01em; }
+    .service p { margin: 0; color: var(--muted); line-height: 1.55; font-size: 0.92rem; }
+
+    .portfolio { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 18px; }
+
+    .project {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      min-height: 220px;
+      display: grid;
+      align-content: flex-end;
+      padding: 16px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.2s ease;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    }
+
+    .project::before {
       content: "";
       position: absolute;
-      inset: 16px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, rgba(15,23,42,0.96), rgba(15,23,42,0.75));
-      box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.35);
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(2,2,2,0.9));
+      z-index: 0;
+      transition: opacity 0.3s ease;
     }
 
-    .project-thumb-label {
-      position: absolute;
-      left: 18px;
-      bottom: 18px;
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-      background: rgba(15,23,42,0.92);
-      border: 1px solid rgba(148,163,184,0.7);
-      font-size: 0.75rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--text-muted);
+    .project:hover { transform: translateY(-6px); box-shadow: 0 26px 70px rgba(0,0,0,0.55), var(--glow); border-color: rgba(0,245,255,0.4); }
+    .project:hover::before { opacity: 0.9; }
+
+    .project .glass {
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(4px);
     }
 
-    .project-thumb-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: radial-gradient(circle at center, #22c55e, #15803d);
-      box-shadow: 0 0 12px rgba(34,197,94,0.9);
-    }
+    .project h3 { margin: 0 0 6px; font-size: 1.05rem; }
+    .project span { color: var(--muted); font-size: 0.88rem; }
 
-    .project-body {
-      padding: 12px 13px 11px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
+    .project a { position: absolute; inset: 0; z-index: 2; }
 
-    .project-title {
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 2px;
-    }
-
-    .project-tag {
-      font-size: 0.7rem;
-      padding: 3px 8px;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      color: var(--text-muted);
-    }
-
-    .project-text {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .project-footer {
-      margin-top: 4px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.76rem;
-      color: var(--text-muted);
-    }
-
-    .project-link {
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 0.76rem;
-      color: var(--accent-2);
-      text-decoration: none;
-    }
-
-    .project-link span {
-      transition: transform var(--transition-fast);
-    }
-
-    .project-link:hover span {
-      transform: translateX(3px);
-    }
-
-    /* PROCESS */
-    .process-steps {
+    .process-track {
+      margin-top: 18px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-      gap: 10px;
-      margin-top: 10px;
-      font-size: 0.78rem;
+      gap: 14px;
+    }
+
+    .process-line {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
     }
 
     .step {
-      padding: 9px 10px;
+      position: relative;
+      padding: 12px;
       border-radius: 14px;
-      border: 1px dashed rgba(75, 85, 99, 0.9);
-      background: rgba(15, 23, 42, 0.95);
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(0,245,255,0.2);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.35);
     }
 
-    .step-number {
-      font-size: 0.75rem;
-      color: var(--accent-2);
+    .step .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(120deg, var(--aqua), var(--blue));
+      box-shadow: 0 0 18px rgba(0,245,255,0.8);
+      margin-bottom: 10px;
+    }
+
+    .step h4 { margin: 0 0 6px; font-size: 1rem; letter-spacing: 0.01em; }
+    .step p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+
+    .about {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(240px, 0.9fr);
+      gap: 22px;
+      align-items: center;
+      margin-top: 16px;
+    }
+
+    .about p { color: var(--muted); line-height: 1.7; }
+
+    .portrait {
+      position: relative;
+      border-radius: 24px;
+      min-height: 280px;
+      overflow: hidden;
+      background: linear-gradient(160deg, rgba(0,245,255,0.08), rgba(11,108,255,0.14));
+      border: 1px solid var(--border);
+      box-shadow: 0 22px 60px rgba(0,0,0,0.55), var(--glow);
+    }
+
+    .portrait::before {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      border-radius: 18px;
+      border: 1px dashed rgba(255,255,255,0.18);
+      opacity: 0.7;
+    }
+
+    .portrait .placeholder {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: 0.08em;
+      color: var(--muted);
       text-transform: uppercase;
-      letter-spacing: 0.12em;
     }
 
-    .step-title {
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    /* CTA SECTION */
     .cta {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
       text-align: center;
-      align-items: center;
-      justify-content: center;
-      padding: 22px 16px;
-      border-radius: 22px;
-      background: radial-gradient(circle at top, #0b1120, #020617);
-      border: 1px solid rgba(55, 65, 81, 0.95);
-      margin-top: 20px;
-      box-shadow: var(--shadow-soft);
+      padding: 40px 18px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(140deg, rgba(0,245,255,0.12), rgba(11,108,255,0.12));
+      border: 1px solid rgba(0,245,255,0.3);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.55), var(--glow);
     }
 
-    .cta-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
+    .cta h3 { margin: 0 0 10px; font-size: 1.6rem; letter-spacing: -0.01em; }
+    .cta p { margin: 0 0 18px; color: var(--muted); }
 
-    .cta-text {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      max-width: 480px;
-    }
-
-    .cta-pill {
-      font-size: 0.75rem;
-      padding: 7px 12px;
-      border-radius: var(--radius-full);
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: rgba(15, 23, 42, 0.96);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .cta-pill span.dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: radial-gradient(circle at center, #22c55e, #15803d);
-      box-shadow: 0 0 10px rgba(34,197,94,0.9);
-    }
-
-    .cta-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
-      margin-top: 6px;
-    }
-
-    .cta-note {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    /* FOOTER */
     footer {
-      margin-top: 18px;
-      padding: 12px 4px 4px;
-      font-size: 0.7rem;
-      color: var(--text-muted);
+      margin-top: 28px;
+      padding: 18px 6px 10px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
       display: flex;
       flex-wrap: wrap;
+      gap: 12px;
       justify-content: space-between;
-      gap: 8px;
-      border-top: 1px solid rgba(31, 41, 55, 0.8);
+      align-items: center;
+      font-size: 0.9rem;
     }
 
-    footer a {
-      color: var(--accent-2);
-      text-decoration: none;
-      opacity: 0.85;
+    footer .links { display: flex; gap: 12px; flex-wrap: wrap; }
+    footer a { color: var(--aqua); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 780px) {
+      nav ul { display: none; }
+      .nav-bar { padding: 12px 14px; }
+      .about { grid-template-columns: 1fr; }
     }
 
-    footer a:hover {
-      opacity: 1;
-      text-decoration: underline;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 790px) {
-      .nav {
-        padding: 8px 12px;
-      }
-      .nav-links {
-        display: none;
-      }
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .hero-right {
-        order: -1;
-      }
-      .hero-card {
-        margin-inline: auto;
-      }
-      .section {
-        padding-inline: 14px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .page {
-        padding-inline: 14px;
-      }
-      .hero-title {
-        font-size: 1.72rem;
-      }
-      .hero-subtitle {
-        font-size: 0.84rem;
-      }
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .btn {
-        justify-content: center;
-        width: 100%;
-      }
-      .project-thumb {
-        height: 150px;
-      }
+    @media (max-width: 520px) {
+      .nav-bar { flex-direction: column; align-items: flex-start; }
+      .cta-row { width: 100%; }
+      .pill { width: 100%; justify-content: center; text-align: center; }
     }
   </style>
 </head>
 <body>
+  <div class="blur-orb orb-aqua"></div>
+  <div class="blur-orb orb-blue"></div>
   <div class="page">
-    <!-- NAVBAR -->
     <header class="nav">
-      <div class="nav-left">
-        <div class="logo-pill">
-          <span>NZ</span>
+      <div class="nav-bar">
+        <div class="logo-wrap">
+          <div class="logo"><span>Zx</span></div>
+          <div class="brand">
+            <strong>ZyphX</strong>
+            <small>Neo Zyphorixweb</small>
+          </div>
         </div>
-        <div class="brand-text">
-          <div class="brand-name">Neo Zyphorixweb</div>
-          <div class="brand-tagline">Landing Pages & Websites</div>
-        </div>
-      </div>
-      <nav class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#process">Process</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="nav-cta">
-        <button class="btn btn-outline" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
-          View solutions
-        </button>
-        <button class="btn btn-primary" onclick="goWhats()">
-          <span class="icon">⚡</span>
-          Quick brief
-        </button>
+        <nav>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <a class="pill" href="#contact">Start a Project</a>
       </div>
     </header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-left">
-        <div class="hero-badge">
-          <div class="hero-badge-dot"></div>
-          <span>Built for brands that refuse generic websites</span>
+    <section class="hero" id="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> Premium Web Design Studio</div>
+        <h1>Neo <span class="gradient">Zyphorixweb</span> crafts cyber-lux experiences that turn vision into velocity.</h1>
+        <p class="lead">ZyphX builds ultra-premium landing pages, full-stack websites and SaaS interfaces engineered for trust, clarity and conversion. Every interaction is tuned for a futuristic, global brand presence.</p>
+        <div class="cta-row">
+          <a class="pill" href="#contact">Start a Project</a>
+          <a class="pill secondary" href="#portfolio">View Portfolio</a>
         </div>
-
-        <h1 class="hero-title">
-          High-end landing pages and websites that
-          <span class="highlight">look like big brands</span>,
-          even if you're just starting out.
-        </h1>
-
-        <p class="hero-subtitle">
-          Neo Zyphorixweb designs fast, conversion-focused experiences with
-          a premium visual language. Modern websites that make your brand
-          look serious, trustworthy and ahead of the curve.
-        </p>
-
-        <div class="hero-actions">
-          <button class="btn btn-primary" onclick="goWhats()">
-            <span class="icon">💬</span>
-            Get a tailored quote in minutes
-          </button>
-          <button class="btn btn-outline" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">
-            View sample projects
-          </button>
-        </div>
-
         <div class="hero-metrics">
-          <div class="metric">
-            <strong>Performance first</strong>
-            <span>Lightweight layouts, optimized for mobile & desktop.</span>
-          </div>
-          <div class="metric">
-            <strong>Serious visuals</strong>
-            <span>Clean, sharp UI that instantly builds trust.</span>
-          </div>
+          <div class="metric"><strong>72+</strong><span>High-velocity launches</span></div>
+          <div class="metric"><strong>3.8x</strong><span>Avg. lift in conversions</span></div>
+          <div class="metric"><strong>11</strong><span>Countries served worldwide</span></div>
         </div>
       </div>
-
-      <div class="hero-right">
-        <div class="hero-card">
-          <div class="hero-card-header">
-            <div>
-              <div class="hero-card-title">Project overview — Neo Zyphorixweb</div>
-              <div class="hero-card-tag">How we structure your website</div>
-            </div>
-            <span class="hero-card-badge">Pro draft</span>
-          </div>
-
-          <div class="hero-card-list">
-            <div class="hero-row">
-              <div>
-                <div class="hero-row-label">Project type</div>
-                <div class="hero-row-value">Landing page + full website</div>
-              </div>
-              <div>
-                <div class="hero-row-label">Investment range</div>
-                <div class="hero-row-value">custom proposal</div>
-              </div>
-            </div>
-
-            <div class="hero-row">
-              <div>
-                <div class="hero-row-label">Main focus</div>
-                <div class="hero-row-value">Conversion & visual authority</div>
-              </div>
-            </div>
-
-            <div class="hero-progress">
-              <span class="hero-row-label">Visual quality vs. generic templates</span>
-              <div class="progress-track">
-                <div class="progress-fill"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-card-footer">
-            <div class="hero-card-tag">
-              Every project is mapped with layout, hierarchy and copy before we design a single pixel.
-            </div>
-            <button class="hero-card-cta" onclick="document.getElementById('process').scrollIntoView({behavior:'smooth'})">
-              See the process →
-            </button>
+      <div class="hero-visual glow-lines">
+        <div class="floating-card">
+          <h3>Trust. Precision. Velocity.</h3>
+          <p>Signature glassmorphism, neon gradients and conversion-first UX crafted for founders who demand elite digital presence.</p>
+          <div class="chip-row">
+            <span class="chip">Landing Systems</span>
+            <span class="chip">SaaS UI/UX</span>
+            <span class="chip">Responsive Futures</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="section">
-      <div class="section-header">
+    <section class="section" id="services">
+      <h2>Services engineered for high-performing brands</h2>
+      <p class="sub">From rapid landing systems to full digital ecosystems, ZyphX blends strategy, narrative, and cyber-luxe visuals to ship outcomes that feel inevitable.</p>
+      <div class="services">
+        <div class="service">
+          <div class="icon">LP</div>
+          <h3>High-converting landing pages</h3>
+          <p>Launch-ready pages with sharp narrative arcs, premium motion and laser-focused conversion paths.</p>
+        </div>
+        <div class="service">
+          <div class="icon">WX</div>
+          <h3>Full multi-page websites</h3>
+          <p>End-to-end brand experiences that scale—from homepage to product, careers and beyond.</p>
+        </div>
+        <div class="service">
+          <div class="icon">UX</div>
+          <h3>SaaS UI/UX design</h3>
+          <p>Enterprise-grade dashboards and product surfaces built for clarity, velocity and user delight.</p>
+        </div>
+        <div class="service">
+          <div class="icon">R∞</div>
+          <h3>Responsive redesigns</h3>
+          <p>Modernize your presence with adaptive systems, neon precision and performance-first builds.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <h2>Portfolio showcase</h2>
+      <p class="sub">Glassmorphic, interactive canvases with hover nuance and neon-lit accents.</p>
+      <div class="portfolio">
+        <div class="project" style="background: linear-gradient(160deg, rgba(0,245,255,0.12), rgba(255,255,255,0.02)), url('https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=900&q=80') center/cover;">
+          <a href="apexfit.html" aria-label="ApexFit Coaching"></a>
+          <div class="glass">
+            <h3>ApexFit Coaching</h3>
+            <span>Landing page concept</span>
+          </div>
+        </div>
+        <div class="project" style="background: linear-gradient(160deg, rgba(11,108,255,0.12), rgba(255,255,255,0.02)), url('https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=900&q=80') center/cover;">
+          <a href="lumen-studio.html" aria-label="Lumen Studio"></a>
+          <div class="glass">
+            <h3>Lumen Studio</h3>
+            <span>Agency website concept</span>
+          </div>
+        </div>
+        <div class="project" style="background: linear-gradient(160deg, rgba(0,245,255,0.12), rgba(11,108,255,0.1)), url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80') center/cover;">
+          <a href="nordwave.html" aria-label="NordWave Analytics"></a>
+          <div class="glass">
+            <h3>NordWave Analytics</h3>
+            <span>SaaS platform presence</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <h2>Process that balances rigor and motion</h2>
+      <p class="sub">A disciplined four-step system with research-grade clarity and smooth, cyber-ready delivery.</p>
+      <div class="process-track">
+        <div class="process-line">
+          <div class="step">
+            <div class="dot"></div>
+            <h4>Step 1: Research &amp; Planning</h4>
+            <p>Deep discovery, competitive scans, and conversion mapping to anchor a confident direction.</p>
+          </div>
+          <div class="step">
+            <div class="dot"></div>
+            <h4>Step 2: Wireframe &amp; Structure</h4>
+            <p>Information architecture and flows that prioritize momentum, readability, and guided action.</p>
+          </div>
+          <div class="step">
+            <div class="dot"></div>
+            <h4>Step 3: Visual Design</h4>
+            <p>Neon-glow interfaces with disciplined grids, precise typography, and cinematic motion.</p>
+          </div>
+          <div class="step">
+            <div class="dot"></div>
+            <h4>Step 4: Development &amp; Delivery</h4>
+            <p>Responsive builds with refined microinteractions, performance polish, and seamless launch.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <h2>About ZyphX</h2>
+      <p class="sub">A global micro-studio blending strategic clarity with cyber-luxe visuals to deliver trustworthy, elite-grade interfaces.</p>
+      <div class="about">
         <div>
-          <h2 class="section-title">What Neo Zyphorixweb delivers</h2>
-          <p class="section-subtitle">
-            Two core offerings: sharp landing pages for focused campaigns and
-            full websites that position your brand as a serious player in your space.
-          </p>
+          <p>ZyphX (Neo Zyphorixweb) partners with founders and teams who need a website that signals credibility on sight. Every build merges narrative precision, motion fluency, and rigorous UX principles so your product feels inevitable.</p>
+          <p>From early-stage launches to enterprise refreshes, ZyphX keeps the process lean, transparent, and relentlessly premium—so you ship faster, look sharper, and convert harder.</p>
         </div>
-      </div>
-
-      <div class="services-grid">
-        <article class="service-card">
-          <span class="service-tag">For launches and paid traffic</span>
-          <h3 class="service-title">High-conversion landing pages</h3>
-          <p class="service-text">
-            A single, laser-focused page designed to capture leads or close sales.
-            Perfect for paid ads, product launches, special offers and funnels.
-          </p>
-          <div class="service-footer">
-            <span class="service-price">Starting at US$ 80</span>
-            <span>Average timeline: 3–7 business days</span>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <span class="service-tag">For full online presence</span>
-          <h3 class="service-title">Full institutional websites</h3>
-          <p class="service-text">
-            Multi-page websites (Home, About, Services, Contact and more)
-            with a cohesive, responsive and premium visual identity that makes
-            your business look established and trustworthy.
-          </p>
-          <div class="service-footer">
-            <span class="service-price">Starting at US$ 150</span>
-            <span>Average timeline: 7–14 business days</span>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <span class="service-tag">Optional upgrades</span>
-          <h3 class="service-title">Optimizations & add-ons</h3>
-          <p class="service-text">
-            Performance tuning, basic SEO, mobile-first refinements,
-            WhatsApp integration, forms and small automations — all tailored
-            to make every visit count.
-          </p>
-          <div class="service-footer">
-            <span class="service-price">Priced after analysis</span>
-            <span>Flexible packages</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- PORTFOLIO (SAMPLE PROJECTS) -->
-    <section id="portfolio" class="section">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">Selected concepts & sample work</h2>
-          <p class="section-subtitle">
-            A few recent concepts that represent the level of clarity, hierarchy
-            and visual polish you can expect when working with Neo Zyphorixweb.
-          </p>
-        </div>
-      </div>
-
-      <div class="portfolio-grid">
-        <!-- PROJECT 1 -->
-        <article class="project-card">
-          <div class="project-thumb">
-            <div class="project-thumb-label">
-              <span class="project-thumb-dot"></span>
-              <span>Landing page concept</span>
-            </div>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">ApexFit Coaching — Launch Funnel</h3>
-            <div class="project-tags">
-              <span class="project-tag">Fitness coach</span>
-              <span class="project-tag">Landing page</span>
-              <span class="project-tag">Lead capture</span>
-            </div>
-            <p class="project-text">
-              High-conversion landing page for an online fitness coach,
-              focused on capturing qualified leads from paid traffic with a
-              clean hero, social proof and clear call-to-action.
-            </p>
-            <div class="project-footer">
-              <span>Conversion-focused layout</span>
-              <a class="project-link" href="apexfit.html">
-                View project example <span>↗</span>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- PROJECT 2 -->
-        <article class="project-card">
-          <div class="project-thumb">
-            <div class="project-thumb-label">
-              <span class="project-thumb-dot"></span>
-              <span>Website concept</span>
-            </div>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">Lumen Studio — Creative Agency Site</h3>
-            <div class="project-tags">
-              <span class="project-tag">Creative studio</span>
-              <span class="project-tag">Multi-page website</span>
-              <span class="project-tag">Portfolio</span>
-            </div>
-            <p class="project-text">
-              Sleek, minimal website for a creative agency, with a strong focus
-              on typography, grid alignment and a smooth section flow that
-              showcases projects without visual noise.
-            </p>
-            <div class="project-footer">
-              <span>Clean, editorial-style design</span>
-              <a class="project-link" href="lumen-studio.html">
-                View project example <span>↗</span>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- PROJECT 3 -->
-        <article class="project-card">
-          <div class="project-thumb">
-            <div class="project-thumb-label">
-              <span class="project-thumb-dot"></span>
-              <span>Full website concept</span>
-            </div>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">NordWave Analytics — SaaS Presence</h3>
-            <div class="project-tags">
-              <span class="project-tag">SaaS</span>
-              <span class="project-tag">Landing + inner pages</span>
-              <span class="project-tag">Product-led</span>
-            </div>
-            <p class="project-text">
-              Product-led website for a fictional analytics platform, combining
-              dashboards preview, clear value propositions and a pricing section
-              optimized for scanning and quick decisions.
-            </p>
-            <div class="project-footer">
-              <span>Ideal for SaaS & tech</span>
-              <a class="project-link" href="nordwave.html">
-                View project example <span>↗</span>
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section id="process" class="section">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">How your project actually flows</h2>
-          <p class="section-subtitle">
-            No chaos, no guesswork. A clear, transparent process so you always know
-            what’s happening, what comes next and when your website goes live.
-          </p>
-        </div>
-      </div>
-
-      <div class="process-steps">
-        <div class="step">
-          <span class="step-number">Step 01</span>
-          <div class="step-title">Quick discovery</div>
-          <p>
-            You answer a short, objective brief about your business, audience and goals.
-            No endless forms — just what we need to design with intention.
-          </p>
-        </div>
-        <div class="step">
-          <span class="step-number">Step 02</span>
-          <div class="step-title">Structure & wireframe</div>
-          <p>
-            We map the main sections, layout and hierarchy of your landing page
-            or website with conversion and clarity as the priority.
-          </p>
-        </div>
-        <div class="step">
-          <span class="step-number">Step 03</span>
-          <div class="step-title">Design & refinement</div>
-          <p>
-            We apply visual identity, typography and color system,
-            then refine based on your feedback to reach a polished final version.
-          </p>
-        </div>
-        <div class="step">
-          <span class="step-number">Step 04</span>
-          <div class="step-title">Launch & light support</div>
-          <p>
-            Final delivery, basic how-to guidance and fast support for small
-            adjustments right after launch, so everything feels smooth.
-          </p>
+        <div class="portrait">
+          <div class="placeholder">Portrait Placeholder</div>
         </div>
       </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section id="contact" class="cta">
-      <div class="cta-pill">
-        <span class="dot"></span>
-        <span>Currently accepting new projects</span>
+    <section class="cta" id="contact">
+      <div class="eyebrow" style="margin: 0 auto 14px;">Let's build something powerful</div>
+      <h3>Ready for a cyber-lux website that moves people to act?</h3>
+      <p>DM ZyphX directly or start your project today. Expect rapid replies, sharp strategy, and beautifully engineered execution.</p>
+      <div class="cta-row" style="justify-content:center;">
+        <a class="pill" href="https://instagram.com/neozyphorixweb" target="_blank" rel="noopener">DM on Instagram</a>
+        <a class="pill secondary" href="#hero">Start your project</a>
       </div>
-
-      <h2 class="cta-title">Ready for a website that looks like it belongs to a big brand?</h2>
-      <p class="cta-text">
-        Send a quick message with your business type and whether you’re thinking
-        about a landing page or a full website. You’ll get a direct, no-fluff
-        plan for your project.
-      </p>
-
-      <div class="cta-actions">
-        <button class="btn btn-primary" onclick="goWhats()">
-          💬 Talk on WhatsApp
-        </button>
-        <button class="btn btn-outline" onclick="window.scrollTo({top:0, behavior:'smooth'})">
-          Back to top
-        </button>
-      </div>
-
-      <p class="cta-note">
-        Note: this is an initial version. We can expand it with real portfolio, case studies,
-        testimonials, blog and more as your brand evolves.
-      </p>
     </section>
 
-    <!-- FOOTER -->
     <footer>
-      <span>© <span id="current-year"></span> Neo Zyphorixweb. All rights reserved.</span>
-      <span>Designed & developed by Neo Zyphorixweb Studio.</span>
+      <div class="logo-wrap">
+        <div class="logo"><span>Zx</span></div>
+        <div class="brand">
+          <strong>ZyphX</strong>
+          <small>Neo Zyphorixweb</small>
+        </div>
+      </div>
+      <div class="links">
+        <span>Premium Web Design &amp; High-Converting Experiences</span>
+      </div>
+      <div class="links">
+        <a href="#hero">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+        <a href="https://instagram.com/neozyphorixweb" target="_blank" rel="noopener">Instagram</a>
+      </div>
     </footer>
   </div>
 
   <script>
-    // Auto year
-    document.getElementById("current-year").textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.transform = 'translateY(0px)';
+          entry.target.style.opacity = '1';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.24 });
 
-    // WhatsApp CTA – replace with your real number
-    function goWhats() {
-      const phone = "55YOUR_NUMBER_HERE"; // e.g.: 5577999862071
-      const text = encodeURIComponent(
-        "Hey! I found Neo Zyphorixweb and I’d like a quote for a landing page / full website."
-      );
-      window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
-    }
+    document.querySelectorAll('.section, .hero, .floating-card, .project, .service, .step').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(22px)';
+      observer.observe(el);
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      const orbs = document.querySelectorAll('.blur-orb');
+      orbs.forEach((orb, idx) => {
+        const intensity = idx === 0 ? 0.02 : -0.02;
+        const x = (window.innerWidth / 2 - e.clientX) * intensity;
+        const y = (window.innerHeight / 2 - e.clientY) * intensity;
+        orb.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    });
   </script>
 </body>
 </html>
